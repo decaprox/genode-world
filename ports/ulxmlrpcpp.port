@@ -1,0 +1,10 @@
+LICENSE   := GPLv2
+VERSION   := git
+DOWNLOADS := ulxmlrpcpp.git
+
+URL(ulxmlrpcpp) := https://github.com/decaprox/ulxmlrpcpp.git
+DIR(ulxmlrpcpp) := src/lib/ulxmlrpcpp
+REV(ulxmlrpcpp) := f1c28d7b6c3f1630bd584a2c6a49aa4cff05e757
+
+PATCHES := src/lib/ulxmlrpcpp/getdomainname.patch
+PATCH_OPT := -p1 -d src/lib/ulxmlrpcpp

@@ -1,0 +1,18 @@
+diff --git a/ulxmlrpcpp/ulxr_tcpip_connection.cpp b/ulxmlrpcpp/ulxr_tcpip_connection.cpp
+index a8bec84..726451c 100644
+--- a/ulxmlrpcpp/ulxr_tcpip_connection.cpp
++++ b/ulxmlrpcpp/ulxr_tcpip_connection.cpp
+@@ -359,11 +359,13 @@ ULXR_API_IMPL(void) TcpIpConnection::init(unsigned prt)
+ 
+ #elif defined(__unix__) || defined(__CYGWIN__)
+ 
++#if 0
+   ret = getdomainname(buffer, sizeof(buffer)-1);
+   if (ret != 0)
+     throw ConnectionException(SystemError,
+                               ulxr_i18n(ULXR_PCHAR("Could not get domain name: "))
+                                    + ULXR_GET_STRING(getErrorString(getLastError())), 500);
++#endif
+ 
+   if (buffer[0] != 0)
+   {
